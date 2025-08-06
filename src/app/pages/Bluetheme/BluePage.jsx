@@ -1,14 +1,14 @@
-import './PinkPage.css';
+import './BluePage.css';
 import Timer from '../../components/Timer/Timer';
 
 
-function PinkPage(){
+function BluePage(){
 
     return(
-        <div className='pink-page'>
+        <div className='blue-page'>
             <div className="video-container">
                 <video autoplay muted loop>
-                    <source className="vid" src='/girlvid.mp4' type="video/mp4" />
+                    <source className="vid" src='/boybettervid.mp4' type="video/mp4" />
                 </video>
             </div>
             <Timer />
@@ -16,4 +16,4 @@ function PinkPage(){
     )
 }
 
-export default PinkPage; 
+export default BluePage; 
