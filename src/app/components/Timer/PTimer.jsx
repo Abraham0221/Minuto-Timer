@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
-import './Timer.css';
+import './PTimer.css';
 
 
-function Timer(){
+function PTimer(){
     const inputRef = useRef(null);
     const displayRef = useRef(null);
     const overlayRef = useRef(null);
@@ -27,19 +27,27 @@ function Timer(){
     };
     
     const activateCountdownMode = () => {
+        // overlayRef is for the dark overlay
         overlayRef.current.style.cssText = `
             background-color: rgba(0, 0, 0, 0.6);
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         `;
+        // containerRef is for the timer input and button
         containerRef.current.style.cssText =`
             opacity: 0; 
             transition: opacity 0.5s ease;
             pointer-events: none;
         `;
+        // displayRef is for the timer display
         displayRef.current.style.cssText = `
-            postion: absolute;
-            top: 50%; left: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             font-size: 120px;
             color: white;
@@ -111,4 +119,4 @@ function Timer(){
         </>
     )
 }
-export default Timer; 
+export default PTimer; 

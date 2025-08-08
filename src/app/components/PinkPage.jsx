@@ -1,5 +1,6 @@
-import './PinkPage.css';
-import Timer from '../../components/Timer/Timer';
+import '../layouts/PinkPage.css';
+import PTimer from './Timer/PTimer';
+
 
 
 function PinkPage(){
@@ -7,11 +8,11 @@ function PinkPage(){
     return(
         <div className='pink-page'>
             <div className="video-container">
-                <video autoplay muted loop>
+                <video autoPlay muted loop>
                     <source className="vid" src='/girlvid.mp4' type="video/mp4" />
                 </video>
             </div>
-            <Timer />
+            <PTimer />
         </div>
     )
 }

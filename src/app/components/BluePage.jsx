@@ -1,17 +1,16 @@
-import './BluePage.css';
-import Timer from '../../components/Timer/Timer';
-
+import BTimer from './Timer/BTimer';
+import '../layouts/BluePage.css';
 
 function BluePage(){
 
     return(
         <div className='blue-page'>
             <div className="video-container">
-                <video autoplay muted loop>
+                <video autoPlay muted loop>
                     <source className="vid" src='/boybettervid.mp4' type="video/mp4" />
                 </video>
             </div>
-            <Timer />
+            <BTimer />
         </div>
     )
 }

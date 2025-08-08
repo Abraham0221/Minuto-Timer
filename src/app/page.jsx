@@ -1,8 +1,10 @@
-import App from './routes/App';
-import Link from 'next/link';
+'use client';
 import '../app/layouts/page.css';
+import { useRouter } from 'next/navigation';
+
 
 export default function Page() {
+  const router = useRouter();
   return (
     <body>
           <div className='centerContainer'>
@@ -10,8 +12,8 @@ export default function Page() {
               Choose
           </span>
           <div className='firstButtons'>
-              <Link href='/blue'><button ></button></Link>
-              <Link href='/pink'><button ></button></Link>
+              <button className='blue' onClick={() => router.push('/Bluetheme')}></button>
+              <button className='pink' onClick={() => router.push('/Pinktheme')}></button>
           </div>
           </div>
       </body>
