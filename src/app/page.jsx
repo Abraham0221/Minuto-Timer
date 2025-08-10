@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 export default function Page() {
   const router = useRouter();
   return (
-    <body>
+    <main>
           <div className='centerContainer'>
           <span>
               Choose
@@ -16,6 +16,6 @@ export default function Page() {
               <button className='pink' onClick={() => router.push('/Pinktheme')}></button>
           </div>
           </div>
-      </body>
+    </main>
   );
 }

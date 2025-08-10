@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-.btn{
+
+.btn-p{
     margin-top: 3%;
     height: 30px;
     width: 80px;
@@ -9,7 +10,7 @@
     border: 2px solid #b392f2 ;
 }
 
-input{
+.input-p{
     background: transparent;
     display: flex;
     color: white;
@@ -18,23 +19,57 @@ input{
     height: 40px;
     width: 200px;
 }
-input::placeholder{
+.input-p::placeholder{
     color: white; 
 }
 
-.timerContainer{
+.timerContainer-p{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
     width: 45vw;
 }
-label{
+.timer-wrapperp{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: column;
+    margin-top: 15%;
+}
+.label-p{
     font-size: 70px;
     color: #b392f2;
     font-family: "Playfair Display", serif;
     font-style: italic;
     font-weight: 300;
     
+}
+.overlay-active{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.container-hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+.timer-display-active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

@@ -27,42 +27,19 @@ function PTimer(){
     };
     
     const activateCountdownMode = () => {
-        // overlayRef is for the dark overlay
-        overlayRef.current.style.cssText = `
-            background-color: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        `;
+            // overlayRef is for the dark overlay
+        overlayRef.current.classList.add('overlay-active');
         // containerRef is for the timer input and button
-        containerRef.current.style.cssText =`
-            opacity: 0; 
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        `;
+        containerRef.current.classList.add('container-hidden');
         // displayRef is for the timer display
-        displayRef.current.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 120px;
-            color: white;
-            font-family: "Playfair Display", serif;
-            font-weight: bold;
-            text-align: center;
-            z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        `;
+        displayRef.current.classList.add('timer-display-active')
+        
     };
 
     const deactivateCountdownMode = () => {
-        overlayRef.current.removeAttribute('style');
-        containerRef.current.removeAttribute('style');
-        displayRef.current.removeAttribute('style');
+        overlayRef.current.classList.remove('overlay-active');
+        containerRef.current.classList.remove('container-hidden');
+        displayRef.current.classList.remove('timer-display-active');
         inputRef.current.value = '';
     };
 
@@ -109,13 +86,15 @@ function PTimer(){
     }, []);
     return (
          <>
-            <div className="overlay" ref={overlayRef}></div>
-            <div className="timerContainer" ref={containerRef}>
-                <label htmlFor="timerInput">Set Timer </label>
-                <input type="text" ref={inputRef} placeholder="EX: 01:30:00" id="timerInput" />
-                <button className="btn" onClick={handleClick}>Enter</button>
+         <div className='timer-wrapperp'>
+            <div className="overlay-p" ref={overlayRef}></div>
+            <div className="timerContainer-p" ref={containerRef}>
+                <label className='label-p' htmlFor="timerInput">Set Timer </label>
+                <input type="text" id='timerInput' ref={inputRef} placeholder="EX: 01:30:00" className='input-p' />
+                <button className="btn-p" onClick={handleClick}>Enter</button>
             </div>
             <div id="timer" ref={displayRef}></div>
+            </div>
         </>
     )
 }

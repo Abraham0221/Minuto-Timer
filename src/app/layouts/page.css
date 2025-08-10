@@ -39,9 +39,9 @@ button:hover{
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
-button:first-child{
+.blue{
     background-color: #55b1ef;
 }
-button:last-child{
+.pink{
     background-color: pink;
 }
